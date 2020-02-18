@@ -2,6 +2,14 @@ package sorting;
 
 /**
  * Sorting Algorithm: Selection Sort
+ *
+ * Time-Complexity:
+ * Best Case: O(n) - Linear Time
+ * Worst Case: O(n^2) - Quadratic Time
+ *
+ * Stable or Unstable sort algorithm?
+ * It is an unstable algorithm because it is possible we will be swapping
+ * duplicates because on each operation we are moving the smaller value into the unsorted partition of the array.
  */
 public class SelectionSort {
     public int[] sort(int[] array) {
