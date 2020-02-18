@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.LinkedList;
 
 /**
- * This class contains a bread-first and depth-first graph search implementation.
+ * This class contains a breadth-first and depth-first graph search implementation.
  */
 public class Graph {
     private HashMap<Integer,Node> nodeLookup = new HashMap<>();
