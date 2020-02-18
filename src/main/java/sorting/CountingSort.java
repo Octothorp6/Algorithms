@@ -14,11 +14,13 @@ package sorting;
  * data-set. EX: sorting a 10 element array with elements ranging from 1-1000000, you would have to create a counting
  * array of length 1000000 just to sort 10 elements.
  */
+
 public class CountingSort {
     public int[] sort(int[] array, int min, int max) {
         int[] countArray = new int[(max - min) + 1];
 
         for (int i = 0; i < array.length; i++) {
+            // figure out where in the count array we are counting the current array value and increment by 1
             countArray[array[i] - min]++;
         }
 
