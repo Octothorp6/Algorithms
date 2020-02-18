@@ -32,6 +32,8 @@ public class MergeSort {
     }
 
     private void merge(int[] array, int start, int mid, int end) {
+        // if the last element in the left partition is <= to the first element in the right partition, then we know
+        // that the array is sorted because the partitions are already sorted and therefore don't need to do anything.
         if (array[mid - 1] <= array[mid]) {
             return;
         }
@@ -42,6 +44,8 @@ public class MergeSort {
 
         int[] temp = new int[end - start];
 
+        // when i == mid we have finished traversing the left array so we want to drop out of the loop.
+        // when j == end we have finished traversing the right array and we want to drop out of the loop.
         while (i < mid && j < end) {
             // compare the current element in the left partition arr[i] to the element in the right partition arr[j]
             // and write the smallest of the two to the temp array. The equal sign maintains the stable property.
@@ -75,6 +79,8 @@ public class MergeSort {
     }
 
     private void descendingMerge(int[] array, int start, int mid, int end) {
+        // if the last element in the left partition is <= to the first element in the right partition, then we know
+        // that the array is sorted because the partitions are already sorted and therefore don't need to do anything.
         if (array[mid - 1] >= array[mid]) {
             return;
         }
