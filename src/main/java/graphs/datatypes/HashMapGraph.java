@@ -1,4 +1,4 @@
-package graph_search;
+package graphs.datatypes;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -7,8 +7,9 @@ import java.util.LinkedList;
 /**
  * This class contains a breadth-first and depth-first graph search implementation.
  */
-public class Graph {
-    private HashMap<Integer,Node> nodeLookup = new HashMap<>();
+public class HashMapGraph {
+    private int V;
+    private HashMap<Integer,Node> nodeLookup;
 
     public static class Node {
         private int id;
@@ -19,8 +20,12 @@ public class Graph {
         }
     }
 
-    public void addNode(int id) {
-        nodeLookup.put(id, new Node(id));
+    public HashMapGraph(int v) {
+        this.V = v;
+        nodeLookup = new HashMap<>();
+        for (int i = 0; i < V; i++) {
+            nodeLookup.put(i, new Node(i));
+        }
     }
 
     private Node getNode(int id) {
