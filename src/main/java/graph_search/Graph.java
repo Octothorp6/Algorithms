@@ -10,7 +10,6 @@ import java.util.LinkedList;
 public class Graph {
     private HashMap<Integer,Node> nodeLookup = new HashMap<>();
 
-
     public static class Node {
         private int id;
         LinkedList<Node> adjacent = new LinkedList<>();
