@@ -27,6 +27,11 @@ public class AdjacencySetGraph implements Graph {
     }
 
     @Override
+    public GraphType TypeOfGraph() {
+        return graphType;
+    }
+
+    @Override
     public void addEdge(int v1, int v2) {
         if (v1 >= vertices || v1 < 0 || v2 >= vertices || v2 < 0) {
             throw new IllegalArgumentException("Invalid vertex number.");
@@ -36,6 +41,16 @@ public class AdjacencySetGraph implements Graph {
         if (graphType == GraphType.UNDIRECTED) {
             vertexList.get(v2).addEdge(v1);
         }
+    }
+
+    @Override
+    public void addEdge(int v1, int v2, int weight) {
+        throw new IllegalArgumentException("Weight not implemented in Adjacency Set.");
+    }
+
+    @Override
+    public int getWeightedEdge(int v1, int v2) {
+        throw new IllegalArgumentException("Weight not implemented in Adjacency Set.");
     }
 
     @Override

@@ -90,7 +90,7 @@ public class GraphHelper {
         Map<Integer, DistanceInfo> distanceTable = new HashMap<>();
         for (int j = 0; j < graph.getNumVertices(); j++) {
             // Set an entry in the distance table for every vertex in the graph
-            distanceTable.put(j, new DistanceInfo());
+            distanceTable.put(j, new DistanceInfo(false));
         }
 
         // Initialize the distance to the source and the last vertex in the path to the source.

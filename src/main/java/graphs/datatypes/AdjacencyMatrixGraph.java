@@ -39,7 +39,7 @@ public class AdjacencyMatrixGraph implements Graph {
 
         int inDegree = 0;
         for (int i = 0; i < numVertices; i++) {
-            // IF the current vertex is present as an adjacent vertex for any other vertex, increment it's indegree ct
+            // IF the current vertex is present as an adjacent vertex for any other vertex, increment it's indegree
             if (adjacencyMatrix[i][v] != 0) {
                 inDegree++;
             }
@@ -48,6 +48,11 @@ public class AdjacencyMatrixGraph implements Graph {
         return inDegree;
     }
 
+
+    @Override
+    public GraphType TypeOfGraph() {
+        return graphType;
+    }
 
     @Override
     public void addEdge(int v1, int v2) {
@@ -60,6 +65,23 @@ public class AdjacencyMatrixGraph implements Graph {
         if (graphType == GraphType.UNDIRECTED) {
             adjacencyMatrix[v2][v1] = 1;
         }
+    }
+
+    @Override
+    public void addEdge(int v1, int v2, int weight) {
+        if (v1 >= numVertices || v1 < 0 || v2 >= numVertices || v2 < 0) {
+            throw new IllegalArgumentException("Invalid vertex number.");
+        }
+
+        adjacencyMatrix[v1][v2] = weight;
+        if (graphType == GraphType.UNDIRECTED) {
+            adjacencyMatrix[v2][v1] = weight;
+        }
+    }
+
+    @Override
+    public int getWeightedEdge(int v1, int v2) {
+        return adjacencyMatrix[v1][v2];
     }
 
     @Override

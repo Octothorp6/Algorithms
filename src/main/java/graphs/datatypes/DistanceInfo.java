@@ -1,11 +1,23 @@
 package graphs.datatypes;
 
+/**
+ * This class will hold the distance information of any vertex. The distance specified is the distance from the source
+ * node and the last vertex is the last vertex just before the current one when traversing from the source node. IF the
+ * graph is weighted, we will initialize distance to INFINITY because in a weighted graph there can be negative weights
+ * and we need to be able to account for that.
+ */
+
 public class DistanceInfo {
     private int distance;
     private int lastVertex;
 
-    public DistanceInfo() {
-        distance = -1;
+    public DistanceInfo(boolean weighted) {
+        if (weighted) {
+           distance = Integer.MAX_VALUE;
+        } else {
+            distance = -1;
+        }
+
         lastVertex = -1;
     }
 
