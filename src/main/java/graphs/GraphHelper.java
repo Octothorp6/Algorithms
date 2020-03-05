@@ -5,6 +5,10 @@ import graphs.datatypes.Graph;
 
 import java.util.*;
 
+/**
+ * This class contains several methods for the traversal and sorting of unweighted graphs.
+ */
+
 public class GraphHelper {
 
     // This is a post order traversal, where all the children will be processed before the parent node
@@ -120,7 +124,7 @@ public class GraphHelper {
         return distanceTable;
     }
 
-    // This will find the shortest path from the source to a destination
+    // This will find the shortest path from the source to a destination for an unweighted graph
     public void findShortestPath(Graph graph, int source, int destination) {
         // Build the distance table for the whole graph starting from the source node.
         Map<Integer, DistanceInfo> distanceTable = buildDistanceTable(graph,source);

@@ -78,7 +78,7 @@ public class DjikstrasAlgorithm {
         if (previousVertex == -1) {
             System.out.println("There is no path from node: " + source + " to node: " + destination);
         } else {
-            System.out.println("Shortest path is: " + source);
+            System.out.print("Shortest path is: " + source);
             while (!stack.isEmpty()) {
                 System.out.print(" -> " + stack.pop());
             }

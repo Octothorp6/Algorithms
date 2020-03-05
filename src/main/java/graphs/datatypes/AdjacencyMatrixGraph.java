@@ -33,6 +33,10 @@ public class AdjacencyMatrixGraph implements Graph {
         }
     }
 
+    public boolean isWeighted() {
+        return isWeighted;
+    }
+
     @Override
     public int getIndegree(int v) {
         if (v >= numVertices || v < 0) {
@@ -101,14 +105,14 @@ public class AdjacencyMatrixGraph implements Graph {
 
     @Override
     public List<Integer> getAdjacentVertices(int v) {
-        if (v > numVertices || v < 0) {
+        if (v >= numVertices || v < 0) {
             throw new IllegalArgumentException("Invalid vertex number.");
         }
 
         List<Integer> adjacentList = new ArrayList<>();
 
         for (int i = 0; i < numVertices; i++) {
-            if(adjacencyMatrix[v][i] == 1) {
+            if(adjacencyMatrix[v][i] != 0) {
                 adjacentList.add(i);
             }
         }

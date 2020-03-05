@@ -12,13 +12,8 @@ public class DistanceInfo {
     private int lastVertex;
 
     public DistanceInfo(boolean weighted) {
-        if (weighted) {
-           distance = Integer.MAX_VALUE;
-        } else {
-            distance = -1;
-        }
-
-        lastVertex = -1;
+        this.distance = weighted ? Integer.MAX_VALUE : -1;
+        this.lastVertex = -1;
     }
 
     public void setDistance(int distance) {
