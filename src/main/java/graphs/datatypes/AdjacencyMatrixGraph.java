@@ -15,11 +15,13 @@ import java.util.List;
 
 public class AdjacencyMatrixGraph implements Graph {
     private int[][] adjacencyMatrix;
+    private boolean isWeighted;
     private GraphType graphType;
     private int numVertices;
 
-    public AdjacencyMatrixGraph(int numVertices, GraphType graphType) {
+    public AdjacencyMatrixGraph(int numVertices, boolean isWeighted, GraphType graphType) {
         this.numVertices = numVertices;
+        this.isWeighted = isWeighted;
         this.graphType = graphType;
 
         adjacencyMatrix = new int[numVertices][numVertices];
@@ -56,6 +58,10 @@ public class AdjacencyMatrixGraph implements Graph {
 
     @Override
     public void addEdge(int v1, int v2) {
+        if (isWeighted) {
+            throw new IllegalArgumentException("This graph is weighted.");
+        }
+
         if (v1 >= numVertices || v1 < 0 || v2 >= numVertices || v2 < 0) {
             throw new IllegalArgumentException("Invalid vertex number.");
         }
@@ -69,6 +75,10 @@ public class AdjacencyMatrixGraph implements Graph {
 
     @Override
     public void addEdge(int v1, int v2, int weight) {
+        if (!isWeighted) {
+            throw new IllegalArgumentException("This is not a weighted graph.");
+        }
+
         if (v1 >= numVertices || v1 < 0 || v2 >= numVertices || v2 < 0) {
             throw new IllegalArgumentException("Invalid vertex number.");
         }
