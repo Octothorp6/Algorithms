@@ -1,6 +1,5 @@
 package graphs;
 
-import graphs.datatypes.DistanceInfo;
 import graphs.datatypes.Graph;
 
 import java.util.*;
@@ -66,25 +65,25 @@ public class BellmanFordAlgorithm {
                 }
             }
         }
-            // Add all the vertices to the queue one more time to check for negative cycles.
-            for (int v = 0; v < graph.getNumVertices(); v++) {
-                queue.add(v);
-            }
+        // Add all the vertices to the queue one more time to check for negative cycles.
+        for (int v = 0; v < graph.getNumVertices(); v++) {
+            queue.add(v);
+        }
 
-            // Relaxing (processing) all the edges one last time to check if there exists a negative cycle.
-            while (!queue.isEmpty()) {
-                int currentVertex = queue.pollFirst();
-                for (int neighbor : graph.getAdjacentVertices(currentVertex)) {
-                    int distance = distanceTable.get(currentVertex).distance +
-                            graph.getWeightedEdge(currentVertex, neighbor);
-                    // IF the distance table can be updated after we have performed numVertices - 1 iterations,
-                    // there is a negative cycle in the graph. Throw an Exception since we cant find path in graph with
-                    // negative cycles.
-                    if (distanceTable.get(neighbor).distance > distance) {
-                        throw new IllegalArgumentException("The Graph has a negative cycle.");
-                    }
+        // Relaxing (processing) all the edges one last time to check if there exists a negative cycle.
+        while (!queue.isEmpty()) {
+            int currentVertex = queue.pollFirst();
+            for (int neighbor : graph.getAdjacentVertices(currentVertex)) {
+                int distance = distanceTable.get(currentVertex).distance +
+                        graph.getWeightedEdge(currentVertex, neighbor);
+                // IF the distance table can be updated after we have performed numVertices - 1 iterations,
+                // there is a negative cycle in the graph. Throw an Exception since we cant find path in graph with
+                // negative cycles.
+                if (distanceTable.get(neighbor).distance > distance) {
+                    throw new IllegalArgumentException("The Graph has a negative cycle.");
                 }
             }
+        }
 
         return distanceTable;
     }
