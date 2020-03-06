@@ -5,7 +5,7 @@ import graphs.datatypes.Graph;
 
 public class Main {
     public static void main(String[] args) {
-        Graph graph = new AdjacencyMatrixGraph(5, true, Graph.GraphType.DIRECTED);
+        Graph graph = new AdjacencyMatrixGraph(5, true, Graph.GraphType.UNDIRECTED);
         graph.addEdge(0,2,4);
         graph.addEdge(2,1,7);
         graph.addEdge(1,4,11);
@@ -16,7 +16,13 @@ public class Main {
 //        GraphHelper graphHelper = new GraphHelper();
 //        graphHelper.findShortestPath(graph,0,4);
 
-        BellmanFordAlgorithm bellmanFord = new BellmanFordAlgorithm();
-        bellmanFord.findShortestPath(graph,0,3);
+//        BellmanFordAlgorithm bellmanFord = new BellmanFordAlgorithm();
+//        bellmanFord.findShortestPath(graph,0,3);
+
+//        PrimsAlgorithm primsAlgorithm = new PrimsAlgorithm();
+//        primsAlgorithm.spanningTree(graph,0);
+
+        KruskalsAlgorithm kruskalsAlgorithm = new KruskalsAlgorithm();
+        kruskalsAlgorithm.spanningTree(graph);
     }
 }

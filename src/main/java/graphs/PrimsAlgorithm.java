@@ -7,8 +7,9 @@ import graphs.datatypes.VertexInfo;
 import java.util.*;
 
 /**
- * This class is an implementation of the Prims Algorithm for minimum spanning tree. The running time for this class if
- * using a binary heap for the priority queue is O(E log V). I'll use the DistanceInfo & VertexInfo classes i've created.
+ * This class is an implementation of the Prims Algorithm for minimum spanning tree. This algorithm is useful for
+ * connected, weighted undirected graphs. The running time for this algorithm if using a binary heap for the priority
+ * queue is O(E log V). I'll use the DistanceInfo & VertexInfo classes i've created.
  */
 public class PrimsAlgorithm {
     public void spanningTree(Graph graph, int source) {
