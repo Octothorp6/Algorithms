@@ -61,7 +61,6 @@ public class BellmanFordAlgorithm {
                         distanceTable.get(neighbor).distance = distance;
                         distanceTable.get(neighbor).lastVertex = currentVertex;
                     }
-
                 }
             }
         }

@@ -22,7 +22,7 @@ public class DjikstrasAlgorithm {
             return ((Integer) v1.getDistance()).compareTo(v2.getDistance());
         });
         Map<Integer, VertexInfo> vertexInfoMap = new HashMap<>();
-        // For each vertex in the graph we will need as distance info entry.
+        // For each vertex in the graph we will need to initialize a distance info entry.
         for (int i = 0; i < graph.getNumVertices(); i++) {
             distanceTable.put(i, new DistanceInfo(true));
         }
