@@ -1,4 +1,4 @@
-package graphs;
+package graphs.algorithms;
 
 import graphs.datatypes.EdgeInfo;
 import graphs.datatypes.Graph;

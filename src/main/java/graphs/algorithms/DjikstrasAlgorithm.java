@@ -1,4 +1,4 @@
-package graphs;
+package graphs.algorithms;
 
 import graphs.datatypes.DistanceInfo;
 import graphs.datatypes.Graph;
